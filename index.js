@@ -3,8 +3,21 @@ let Btn = document.querySelector(".Btn")
 let main = document.querySelector("main")
 let hide =document.querySelector(".logoBottom")
 
+Btn.disabled=true;
+textArea.addEventListener("input", () => {
+if (textArea.value === "") {
+  Btn.disabled = true;
+} else {
+  Btn.disabled = false;
+}
+});
+
+
 
 Btn.addEventListener("click",()=>{
+
+
+
   let el= document.createElement("div")
   el.setAttribute("class", "taskAdded")
   el.style.border="1px solid grey"
@@ -14,6 +27,7 @@ Btn.addEventListener("click",()=>{
   el.style.padding=".2rem 1rem"
   el.textContent= textArea.value
   textArea.value=""
+Btn.disabled = textArea.value.trim() === ""; // <-- this line overrides everything
 
 let check= document.createElement("div")
 check.innerHTML = `<input type="checkbox" id="myCheck">
@@ -31,6 +45,7 @@ bin.innerHTML = `<i class="fa-solid fa-trash" style="color: #696969;"></i>`;
 bin.addEventListener("click", () => {
   el.remove();
 });
+
 
   el.prepend(check)
   el.append(bin)

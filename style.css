@@ -94,5 +94,58 @@ footer{
 
 }
 
+.Btn:hover{
+    box-shadow:  2px 2px 5px gray;
+    color: gray;
+}
+
+#textBox:hover{
+box-shadow:  2px 2px 5px gray;
+}
+/* Default styles for mobile (mobile-first) */
+
+@media (max-width: 480px) {
+  .addTask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1rem;
+  }
+
+  #textBox{
+    width: 80%;
+
+}
+.logo{
+    display: none;
+}
+
+.title{
+    font-size: 10vw;
+}
 
 
+.belowTitle{font-size: 7vw;
+text-align: center;}
+
+
+.NoTasks{
+    font-size: 7vw;
+    text-align: center;
+}
+
+.keepGoing{
+font-size: 7vw;
+text-align: center;
+}
+}
+
+@media (min-width: 1024px) {
+    .addTask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+  }
+}
